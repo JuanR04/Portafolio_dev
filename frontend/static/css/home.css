@@ -1,0 +1,312 @@
+.home-scroll {
+  flex: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+/** Secciones dentro del contenedor **/
+.home-scroll > .home, .sobre-mi {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+}
+/** HOME **/
+.home {
+  background-image: url('../resources/fondo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.home-content {
+  display: flex;
+  height: 90vh;
+  width: 85%;
+  max-width: 1400px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  overflow: hidden;
+}
+.home-title {
+  width: 50%;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  color: #fff;
+}
+.home-title h2 {
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+.home-title p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #ddd;
+  line-height: 1.6;
+}
+.home-title a {
+  text-decoration: none;
+  color: #fff;
+  width: 30%;
+  font-size: 18px;
+  padding: 12px 28px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(55, 50, 100, 0.7), rgba(90, 85, 150, 0.7));
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.home-title a:hover {
+  background: linear-gradient(135deg, rgba(90, 85, 150, 0.9), rgba(55, 50, 100, 0.9));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+/** Imagen en home **/
+.home-img {
+  width: 50%;
+  background-image: url('../resources/code.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  position: relative;
+}
+.home-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: brightness(1);
+}
+/** Separador **/
+.separador {
+  width: 100%;
+  height: 200px;
+  background-image: url('../resources/separador.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+}
+/** SOBRE MI **/
+.sobre-mi {
+  background-image: url('../resources/fondo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  text-align: center;
+}
+.sobre-mi h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.sobre-mi a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 28px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(55, 50, 100, 0.7), rgba(90, 85, 150, 0.7));
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.sobre-mi a:hover {
+  background: linear-gradient(135deg, rgba(90, 85, 150, 0.9), rgba(55, 50, 100, 0.9));
+  transform: translateY(-2px);
+}
+/** PROYECTOS y CONTACTO (modificado para que aparezcan lado a lado) **/
+.tarjetas-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Estilo base mejorado para ambas tarjetas */
+.proyectos,
+.contacto {
+  width: calc(50% - 40px);
+  max-width: 500px;
+  padding: 40px 30px;
+  background: rgba(10, 10, 50, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Efecto hover mejorado */
+.proyectos:hover,
+.contacto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Añadir un sutil efecto de brillo en las esquinas */
+.proyectos::before,
+.contacto::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(30deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.proyectos:hover::before,
+.contacto:hover::before {
+  opacity: 1;
+}
+
+/* Títulos mejorados */
+.proyectos h2,
+.contacto h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, #b8c6db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+/* Línea decorativa bajo los títulos */
+.proyectos h2::after,
+.contacto h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(90, 85, 150, 0.8), rgba(140, 135, 200, 0.8));
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Botones mejorados */
+.proyectos a,
+.contacto a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(55, 50, 100, 0.9), rgba(90, 85, 150, 0.9));
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Efecto hover para botones */
+.proyectos a:hover,
+.contacto a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto ripple en botones */
+.proyectos a::after,
+.contacto a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1);
+  transition: 0.9s;
+  z-index: -1;
+}
+
+.proyectos a:hover::after,
+.contacto a:hover::after {
+  transform: scale(70);
+  opacity: 0.3;
+}
+
+/* Añadir iconos a las tarjetas */
+.tarjeta-icono {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Añadir descripciones */
+.tarjeta-descripcion {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .proyectos,
+  .contacto {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .tarjetas-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animación sutil al cargar la página */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.proyectos {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.contacto {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  opacity: 0; /* Inicia invisible para la animación */
+}

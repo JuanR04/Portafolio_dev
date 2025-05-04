@@ -1,0 +1,288 @@
+/** SOBRE MI SECCIÓN DETALLADA - COMPLETO **/
+.about {
+    background-image: url('../resources/fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+}
+
+.about h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #ffffff, #a0c4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-section {
+    max-width: 1100px;
+    width: 90%;
+    background: rgba(20, 25, 45, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 35px 45px;
+    margin-bottom: 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out forwards;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(100, 120, 200, 0.2);
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.about-section h2 {
+    font-size: 34px;
+    margin-bottom: 22px;
+    background: linear-gradient(135deg, #ffffff, #a0c4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(120, 120, 220, 0.9), rgba(180, 180, 250, 0.6));
+    margin-top: 12px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-section p,
+.about-section ul {
+    color: #e8e8ff;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.about-section ul {
+    padding-left: 22px;
+    list-style-type: disc;
+}
+
+.about-section ul li::marker {
+    color: #a0c4ff;
+}
+
+/** CONTENEDOR PRINCIPAL DE TECNOLOGÍAS **/
+.technologies-container {
+    width: 100%;
+}
+
+/** GRUPOS DE TECNOLOGÍAS **/
+.tech-group {
+    margin-bottom: 30px;
+}
+
+.tech-group-title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffffff, #8aa2d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+/** ESTILO PARA CADA TECNOLOGÍA **/
+.tech {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, rgba(40, 45, 70, 0.8), rgba(30, 35, 60, 0.8));
+    border-radius: 16px;
+    padding: 12px 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    width: calc(33.33% - 20px);
+    min-width: 180px;
+    max-width: 320px;
+    overflow: hidden;
+    border: 1px solid rgba(120, 130, 200, 0.2);
+}
+
+.tech:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(70, 90, 255, 0.25);
+    background: linear-gradient(145deg, rgba(50, 55, 90, 0.9), rgba(40, 45, 80, 0.9));
+    border: 1px solid rgba(120, 130, 200, 0.4);
+}
+
+.tech::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.tech:hover::before {
+    left: 100%;
+}
+
+/** CONTENEDOR DE ICONO **/
+.tech-icon-container {
+    background: rgba(255, 255, 255, 0.95);
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.tech:hover .tech-icon-container {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 15px rgba(70, 100, 255, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.tech img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+.tech:hover img {
+    transform: scale(1.1);
+}
+
+/** INFORMACIÓN DE LA TECNOLOGÍA **/
+.tech-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 3px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.tech-description {
+    font-size: 13px;
+    color: #b8c6db;
+    line-height: 1.4;
+}
+
+/* Animación para la sección */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/** RESPONSIVE **/
+@media (max-width: 1100px) {
+    .tech {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .about h1 {
+        font-size: 44px;
+    }
+    
+    .about-section {
+        padding: 28px 22px;
+    }
+    
+    .about-section h2 {
+        font-size: 28px;
+    }
+    
+    .about-section p,
+    .about-section ul {
+        font-size: 16px;
+    }
+
+    .tech-group-title {
+        font-size: 22px;
+    }
+    
+    .tech {
+        width: calc(50% - 10px);
+        min-width: 150px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about h1 {
+        font-size: 36px;
+    }
+    
+    .about-section h2 {
+        font-size: 24px;
+    }
+    
+    .tech-group-title {
+        font-size: 20px;
+    }
+    
+    .tech {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .tech-icon-container {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    
+    .tech img {
+        width: 22px;
+        height: 22px;
+    }
+}
