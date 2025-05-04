@@ -11,7 +11,7 @@ export function initContactForm() {
       const message = document.querySelector("#message").value.trim();
   
       try {
-        const res = await fetch("http://localhost:3001/send", {
+        const res = await fetch("https://portafoliodev-production.up.railway.app/send", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, message }),
