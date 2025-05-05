@@ -5,6 +5,26 @@ import Contact from './views/contact.js';
 import Layout from './layout/layout.js';
 import { initContactForm } from '../js/handlers/ContactHandler.js'; 
 
+// 👇 Agrega esta función directamente aquí
+function setupMenuToggle() {
+  const toggle = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+
+  if (toggle && sidebar) {
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("show");
+    });
+
+    // Cerrar sidebar al hacer clic en un enlace
+    sidebar.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        sidebar.classList.remove("show");
+      });
+    });
+  }
+}
+
+
 const routes = {
   '/': Home,
   '/about': About,
@@ -18,8 +38,12 @@ export default function router() {
   const content = viewFn();
   document.body.innerHTML = Layout(content);
 
-  // 👇 Aquí detectas si estás en la ruta "/contact" y ejecutas el listener
+  // Ejecutar funcionalidad del menú hamburguesa
+  setupMenuToggle();
+
+  // Ejecutar lógica específica de contacto
   if (path === '/contact') {
     initContactForm();
   }
 }
+

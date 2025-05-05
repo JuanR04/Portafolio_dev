@@ -15,7 +15,7 @@
   font-size: 2rem;
   color: #fff;
 }
-/** HOME **/
+/** HOME - Estilos base **/
 .home {
   background-image: url('../resources/fondo.jpg');
   background-size: cover;
@@ -26,6 +26,7 @@
   align-items: center;
   padding: 40px 0;
 }
+
 .home-content {
   display: flex;
   height: 90vh;
@@ -35,6 +36,7 @@
   border-radius: 30px;
   overflow: hidden;
 }
+
 .home-title {
   width: 50%;
   background: linear-gradient(135deg, #111, #1a1a1a);
@@ -44,18 +46,21 @@
   padding: 60px;
   color: #fff;
 }
+
 .home-title h2 {
   font-size: 70px;
   font-weight: bold;
   margin-bottom: 30px;
   line-height: 1.2;
 }
+
 .home-title p {
   font-size: 20px;
   margin-bottom: 40px;
   color: #ddd;
   line-height: 1.6;
 }
+
 .home-title a {
   text-decoration: none;
   color: #fff;
@@ -67,11 +72,13 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 .home-title a:hover {
   background: linear-gradient(135deg, rgba(90, 85, 150, 0.9), rgba(55, 50, 100, 0.9));
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
+
 /** Imagen en home **/
 .home-img {
   width: 50%;
@@ -81,12 +88,124 @@
   filter: brightness(0.9);
   position: relative;
 }
+
 .home-img::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: brightness(1);
+}
+
+/** RESPONSIVE DESIGN para HOME **/
+@media (max-width: 1024px) {
+  .home-title {
+    padding: 40px;
+  }
+  
+  .home-title h2 {
+    font-size: 55px;
+  }
+  
+  .home-title p {
+    font-size: 18px;
+  }
+  
+  .home-title a {
+    width: auto;
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+  
+  .home-title, .home-img {
+    width: 100%;
+  }
+  
+  .home-title {
+    padding: 40px 30px;
+    order: 2; /* Cambia el orden para que el texto aparezca después de la imagen */
+  }
+  
+  .home-img {
+    height: 40vh; /* Altura fija para la imagen en móviles */
+    order: 1; /* La imagen aparece primero */
+    border-radius: 30px 30px 0 0; /* Redondea solo las esquinas superiores */
+  }
+  
+  .home-title h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .home-title p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .home-title a {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 20px 0;
+  }
+  
+  .home-content {
+    width: 90%;
+    height: 400px;
+    border-radius: 15px; /* Ajusta el redondeo */
+    background-image: url("../resources/code.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+  }
+  
+  .home-title {
+    width: 90%;
+    height: 400px;
+    padding: 20px 15px; /* Ajusta el padding */
+    text-align: center; /* Centra el texto */
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  }
+  
+  .home-img {
+    display: none; /* Oculta la imagen en resoluciones pequeñas */
+  }
+  
+  .home-title h2 {
+    font-size: 24px; /* Reduce el tamaño del título */
+    line-height: 1.3; /* Ajusta el espaciado entre líneas */
+  }
+  
+  .home-title p {
+    font-size: 14px;
+    width: auto; /* Reduce el tamaño del texto */
+    margin-bottom: 15px; /* Ajusta el margen inferior */
+  }
+  
+  .home-title a {
+    width: auto; /* Ajusta el ancho del botón */
+    font-size: 14px; /* Reduce el tamaño del texto del botón */
+    padding: 10px 20px; /* Ajusta el padding del botón */
+    margin: 0 auto; /* Centra el botón */
+    display: inline-block; /* Asegura que el botón se comporte correctamente */
+    background: linear-gradient(135deg, rgba(55, 50, 100, 0.7), rgba(90, 85, 150, 0.7)); /* Botón más sutil */
+    border-radius: 20px; /* Ajusta el redondeo del botón */
+  }
 }
 /** Separador **/
 .separador {

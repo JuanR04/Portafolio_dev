@@ -1,126 +1,202 @@
-/* Layout general */
+/** Layout general **/
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* El main ahora tiene un contenedor que envuelve el contenido */
-  main#view {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Contenedor de scroll */
-  .content-container {
-    flex: 1;
-    overflow-y: auto;
-  }
-  
-/* Header */
-  header {
-    background: #000000;
-    color: rgb(255, 255, 255);
-    padding: 1rem 2rem;
-    display: flex; /* Convertimos el header en un contenedor Flexbox */
-    justify-content: space-between; /* Espaciamos el logo a la izquierda y el nav a la derecha */
-    align-items: center; /* Alineamos verticalmente los elementos al centro */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/** Main wrapper **/
+main#view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/** Contenedor de scroll **/
+.content-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/** Header **/
+header {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
-    /* margin: 0 auto; Ya no es necesario con Flexbox en el header */
+  width: 80px;
+  height: 80px;
 }
 
+/** Desktop Navigation **/
+.desktop-nav {
+  display: flex;
+}
+
+/** Menú toggle (hamburguesa) **/
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+  z-index: 1100;
+}
+
+/** Sidebar lateral (móvil) **/
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: #000;
+  padding-top: 6rem;
+  transition: right 0.3s ease;
+  z-index: 1050;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.7);
+}
+
+.sidebar.show {
+  right: 0;
+}
+
+/** Lista de navegación **/
 .nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Alinea los items a la derecha dentro de la lista */
-    padding: 0;
-    margin: 0;
-    width: auto; /* Ajustamos el ancho para que ocupe el espacio necesario */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
-.nav-list li {
-    margin: 0 1rem;
-}
-
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; 
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-list a:hover {
-    background-color: #444;
+  background-color: #444;
 }
 
 .nav-list a:active {
-    background-color: #000000; 
-    color: #ffffff;         
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); 
-    transform: scale(0.95); 
-    transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease; 
+  background-color: #000000;
+  color: #ffffff;        
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  transform: scale(0.95);
+  transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
-/* Footer */
+
+/** Footer **/
 footer {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 1rem;
-    text-align: center;
-    flex-shrink: 0;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+footer div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer p {
+  margin-bottom: 1rem;
+  font-size: 0.5rem;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #535353;
+}
+
+.social-media {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media li {
+  margin: 0 0.5rem;
+}
+
+.social-media img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.social-media img:hover {
+  opacity: 1;
+}
+
+/** Responsive **/
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
   }
   
-  footer div {
-    max-width: 1200px; /* Limita el ancho del contenido para pantallas grandes */
-    margin: 0 auto; /* Centra el contenedor interno */
+  .menu-toggle {
+    display: block;
   }
   
-  footer p {
-    margin-bottom: 1rem; /* Espacio entre los párrafos */
-    font-size: 0.5rem; /* Un tamaño de fuente más pequeño para el texto del footer */
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
   }
   
-  footer a {
-    color: #000000; /* Color de los enlaces */
-    text-decoration: none; /* Quita el subrayado por defecto */
+  .nav-list li {
+    margin: 1rem 0;
   }
   
-  footer a:hover {
-    color: #535353; /* Un ligero cambio de color al pasar el ratón */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
   }
   
-  .social-media {
-    list-style: none; /* Quita los puntos de la lista */
-    padding: 0;
-    margin: 1rem 0; /* Espacio arriba y abajo de los iconos */
-    display: flex; /* Para alinear los iconos horizontalmente */
-    justify-content: center; /* Centra los iconos */
+  .sidebar {
+    display: none !important;
   }
   
-  .social-media li {
-    margin: 0 0.5rem; /* Espacio entre los iconos */
+  .desktop-nav {
+    display: block;
   }
+}
+
   
-  .social-media img {
-    width: 20px; /* Tamaño de los iconos */
-    height: 20px;
-    opacity: 0.7; /* Ligera transparencia */
-    transition: opacity 0.3s ease; /* Transición suave para el efecto hover */
-  }
-  
-  .social-media img:hover {
-    opacity: 1; /* Sin transparencia al pasar el ratón */
-  }

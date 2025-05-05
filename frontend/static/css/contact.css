@@ -9,8 +9,8 @@
 
 .contact-container {
     display: flex;
-    max-width: 1200px;
-    width: 100%;
+    max-width: 1000px; /* Reduce el ancho máximo del contenedor */
+    width: 90%; /* Asegura que se adapte al ancho de la pantalla */
     background: rgba(20, 15, 30, 0.5);
     border-radius: 16px;
     overflow: hidden;
@@ -121,7 +121,8 @@
 
 /* Botón de enviar */
 .submit-btn {
-    width: 100%;
+    margin-left: 90px ;
+    width: 60%;
     padding: 14px;
     border: none;
     border-radius: 8px;
@@ -154,17 +155,33 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     .contact-section {
         padding: 20px 10px;
     }
     
     .contact-info,
     .contact-form-container {
-        padding: 30px 20px;
+        padding: 20px 15px; /* Reduce el padding */
     }
     
     .contact-info h2 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Reduce el tamaño del título */
+    }
+
+    .contact-info p {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+    }
+
+    .contact-container {
+        max-width: 350px; /* Reduce el ancho máximo del contenedor */
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    }
+
+    .submit-btn {
+        margin: 20px auto 0; /* Centra el botón */
+        width: 80%; /* Ajusta el ancho del botón */
+        font-size: 14px; /* Reduce el tamaño del texto del botón */
+        padding: 12px; /* Ajusta el padding del botón */
     }
 }
