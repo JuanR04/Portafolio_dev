@@ -1,10 +1,18 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-require("dotenv").config();
+require("dotenv").config(); 
 
 const app = express();
-app.use(cors());
+
+// Configuración de CORS para aceptar solicitudes solo desde el front especificado
+const corsOptions = {
+  origin: "https://portafolio-dev-kappa.vercel.app",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Define port for local development, Vercel will handle deployment port automatically
