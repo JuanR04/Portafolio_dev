@@ -5,9 +5,12 @@ require("dotenv").config();
 
 const app = express();
 
-// Configuración de CORS para aceptar solicitudes solo desde el front especificado
+// Configuración de CORS para aceptar solicitudes desde los dominios permitidos
 const corsOptions = {
-  origin: "https://portafolio-dev-kappa.vercel.app",
+  origin: [
+    "https://portafolio-dev-kappa.vercel.app", 
+    "https://portafoliodev-production.up.railway.app"
+  ],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
